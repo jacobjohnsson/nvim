@@ -38,6 +38,10 @@ vim.opt.termguicolors = true
 -- Draw a column at 80
 vim.opt.colorcolumn = "80"
 
+-- Add a shortcut to cheatsheet.md
 vim.api.nvim_create_user_command('Cheat', function()
     vim.cmd('pedit ' .. '/home/jacob/.config/nvim/cheatsheet.md')
 end, { nargs = 0 })
+
+-- Shorten the update time to make gitgutter feel responsive
+vim.opt.updatetime = 100
