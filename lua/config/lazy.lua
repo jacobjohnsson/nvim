@@ -61,6 +61,12 @@ require("lazy").setup({
         end,
     },
     {
+        "tzachar/local-highlight.nvim",
+        config = function()
+            require('local-highlight').setup()
+        end,
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         config = function()
             require'nvim-treesitter.configs'.setup {
