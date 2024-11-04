@@ -35,16 +35,25 @@ require("lazy").setup({
         end,
     },
     {
-        "echasnovski/mini.nvim", 
+        "echasnovski/mini.nvim",
         version = false,
         config = function ()
             require("mini.pairs").setup({})
         end,
     },
-        "airblade/vim-gitgutter", 
+    {
+        "airblade/vim-gitgutter",
         -- config = function ()
         --     require("mini.pairs").setup({})
         -- end,
+    },
+    {
+        "vim-airline/vim-airline",
+        config = function()
+            -- Remove the encoding field, why would I ever need it?
+            vim.g['airline_section_y'] = ''
+        end,
+    },
     {
         "nvim-treesitter/nvim-treesitter",
         config = function()
