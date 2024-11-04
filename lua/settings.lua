@@ -52,3 +52,5 @@ vim.keymap.set('n', '<Up>', '<C-y>')
 
 -- Add a status line to every window
 vim.opt.laststatus = 2
+
+vim.opt.cursorline = true
