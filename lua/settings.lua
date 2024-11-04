@@ -53,9 +53,12 @@ vim.keymap.set('n', '<Up>', '<C-y>')
 -- Add a status line to every window
 vim.opt.laststatus = 2
 
+-- Highlight the current line
 vim.opt.cursorline = true
 
+-- Allow NeoVim to integrate with the system clipboard
 vim.opt.clipboard = "unnamedplus"
 
+-- Render trailing whitespace as '~'
 vim.opt.list = true
 vim.opt.listchars = "trail:~,tab:\\u2022\\u2022"
