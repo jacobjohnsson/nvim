@@ -55,6 +55,12 @@ require("lazy").setup({
         end,
     },
     {
+        "vim-airline/vim-airline-themes",
+        config = function()
+            vim.g['airline_theme'] = "deus"
+        end,
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         config = function()
             require'nvim-treesitter.configs'.setup {
