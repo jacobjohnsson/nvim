@@ -56,3 +56,6 @@ vim.opt.laststatus = 2
 vim.opt.cursorline = true
 
 vim.opt.clipboard = "unnamedplus"
+
+vim.opt.list = true
+vim.opt.listchars = "trail:~,tab:\\u2022\\u2022"
