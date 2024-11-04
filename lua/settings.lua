@@ -49,3 +49,6 @@ vim.opt.updatetime = 100
 -- Make <UP ARROW> and <DOWN ARROW> move the window instead of the cursor
 vim.keymap.set('n', '<Down>', '<C-e>')
 vim.keymap.set('n', '<Up>', '<C-y>')
+
+-- Add a status line to every window
+vim.opt.laststatus = 2
