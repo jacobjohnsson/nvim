@@ -65,3 +65,10 @@ Prepend all with `:G`.
 | `<Leader>hu` | gitgutter   | Undo hunk                                      |
 
 All other `:G` commands works pretty much as expected.
+
+## Refactoring
+
+| Command      | Plugin      | Description                                    |
+| ------------ | ----------- | ---------------------------------------------- |
+| `:Refactor`  | refactoring | Can be used to extranct/inline functions,      |
+|              |             | blocks and variables                           |
