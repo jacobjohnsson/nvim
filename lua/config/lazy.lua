@@ -19,12 +19,25 @@ require("lazy").setup({
     {
         -- Color Scheme :D
         "rebelot/kanagawa.nvim",
+        -- config = function()
+        --     vim.cmd.colorscheme("kanagawa-wave")
+        --     vim.api.nvim_set_hl(0, 'Comment', { link = 'Grey' })
+        -- end,
+    },
+    {
+        "sainnhe/gruvbox-material",
+    --     config = function()
+    --         vim.cmd.colorscheme("gruvbox-material")
+    --         vim.api.nvim_set_hl(0, 'Comment', { link = 'Grey' })
+    --     end
+    },
+    {
+        "sainnhe/everforest",
         config = function()
-            vim.cmd.colorscheme("kanagawa-wave")
+            vim.cmd.colorscheme("everforest")
+            vim.api.nvim_set_hl(0, 'Comment', { link = 'Grey' })
         end,
     },
-    { "sainnhe/gruvbox-material" },
-    { "sainnhe/everforest" },
     {
         "ggandor/leap.nvim",
         config = function()
