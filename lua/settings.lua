@@ -1,3 +1,8 @@
+-- The current directory as a String
+local current_dir = vim.fn.fnamemodify(debug.getinfo(1).source:sub(2), ":h")
+-- The top directory of my NeoVim configuration. (~/.config/nvim/)
+local top_dir = vim.fn.fnamemodify(current_dir, ":h")
+
 -- Use <Space> as leader
 vim.g.mapleader = " "
 
@@ -40,7 +45,7 @@ vim.opt.colorcolumn = "80"
 
 -- Add a shortcut to cheatsheet.md
 vim.api.nvim_create_user_command('Cheat', function()
-    vim.cmd('split ' .. '/home/jacob/.config/nvim/cheatsheet.md')
+    vim.cmd('split ' .. top_dir .. '/cheatsheet.md')
 end, { nargs = 0 })
 
 -- Shorten the update time to make gitgutter feel responsive
