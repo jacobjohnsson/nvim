@@ -70,5 +70,5 @@ All other `:G` commands works pretty much as expected.
 
 | Command      | Plugin      | Description                                    |
 | ------------ | ----------- | ---------------------------------------------- |
-| `:Refactor`  | refactoring | Can be used to extranct/inline functions,      |
+| `:Refactor`  | refactoring | Can be used to extract/inline functions,       |
 |              |             | blocks and variables                           |
