@@ -137,10 +137,14 @@ require("lazy").setup({
                             ["<Leader>mF"] = "@function.outer",
                         },
                     },
+                    playground = {
+                        enable = true,
+                    },
                 },
             }
         end,
     },
+    { "nvim-treesitter/playground" },
     { "nvim-treesitter/nvim-treesitter-textobjects" },
     { "nvim-treesitter/nvim-treesitter-context" },
     {
@@ -165,5 +169,70 @@ require("lazy").setup({
     },
     {
         "tpope/vim-fugitive",
+    },
+    -- LSP
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            local lsp = require("lspconfig")
+            lsp.clangd.setup{} -- intall clangd lsp
+        end,
+    },
+    {
+        "hrsh7th/cmp-nvim-lsp",
+        config = function()
+            require('cmp_nvim_lsp').default_capabilities()
+        end,
+    },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/cmp-cmdline" },
+    {
+        "hrsh7th/nvim-cmp",
+        config = function(args)
+            local cmp = require('cmp')
+            cmp.setup({
+                snippet = {
+                    -- Use the built in neovim snippet engine.
+                    -- vim.snippet.expand(args.body)
+                },
+                window = {
+                    -- completion = cmp.config.window.bordered(),
+                    documentation = cmp.config.window.bordered(),
+                },
+                mapping = cmp.mapping.preset.insert({
+                      ['<C-d>'] = cmp.mapping.open_docs(),
+                      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                      ['<C-Space>'] = cmp.mapping.complete(),
+                      ['<C-e>'] = cmp.mapping.abort(),
+                      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                }),
+                sources = cmp.config.sources({
+                    { name = 'nvim_lsp' },
+                    -- { name = 'vsnip' }, -- For vsnip users.
+                    -- { name = 'luasnip' }, -- For luasnip users.
+                    -- { name = 'ultisnips' }, -- For ultisnips users.
+                    -- { name = 'snippy' }, -- For snippy users.
+                }, {
+                  { name = 'buffer' },
+                })
+            })
+            cmp.setup.cmdline({ '/', '?' }, {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = {
+                    { name = 'buffer' }
+                }
+            })
+            cmp.setup.cmdline(':', {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = cmp.config.sources({
+                    { name = 'path' }
+                }, {
+                    { name = 'cmdline' }
+                }),
+                matching = { disallow_symbol_nonprefix_matching = false }
+            })
+        end,
     },
 })
