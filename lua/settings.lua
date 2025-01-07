@@ -67,3 +67,6 @@ vim.opt.clipboard = "unnamedplus"
 -- Render trailing whitespace as '~'
 vim.opt.list = true
 vim.opt.listchars = "trail:~,tab:\\u2022\\u2022"
+
+-- Remove highlighted search results in normal mode by pressing Esc.
+vim.api.nvim_set_keymap('n', '<Esc>', '<Esc>:noh<CR>', {noremap = true, silent = true})
