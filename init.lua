@@ -6,3 +6,4 @@ require("settings")
 require("config.lazy")
 
 -- --- Everything after this line requires Lazy ---
+vim.api.nvim_set_hl(0, "BlinkCmpGhostText", { link = "Grey" })
