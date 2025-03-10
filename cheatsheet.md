@@ -72,3 +72,14 @@ All other `:G` commands works pretty much as expected.
 | ------------ | ----------- | ---------------------------------------------- |
 | `:Refactor`  | refactoring | Can be used to extract/inline functions,       |
 |              |             | blocks and variables                           |
+
+## LSP
+
+In order to have the clangd language server recognize dependencies put a
+'.clangd' in the project root that specifies what to include.
+
+For example:
+
+> CompileFlags:
+>   Add: ["-I/usr/include/glib-2.0",
+>         "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include"]
