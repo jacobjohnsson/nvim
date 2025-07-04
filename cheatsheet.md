@@ -66,6 +66,21 @@ Prepend all with `:G`.
 
 All other `:G` commands works pretty much as expected.
 
+## Telescope
+
+| Command      | Plugin      | Description                                    |
+| ------------ | ----------- | ---------------------------------------------- |
+| `<Leader>ff` | telescope   | Find files                                     |
+| `<Leader>fg` | telescope   | Live grep                                      |
+| `<Leader>fh` | telescope   | Find in help tags                              |
+| `<Leader>ft` | telescope   | Find in treesitter                             |
+| `<Leader>fp` | telescope   | Find planets                                   |
+| `<Leader>fm` | telescope   | Find in man pagez                              |
+| `<Leader>gb` | telescope   | checkout branch                                |
+| `<Leader>gc` | telescope   | checkout commit                                |
+| `<Leader>gh` | telescope   | git status                                     |
+| `<C q>`      | telescope   | Populate quickfix list                         |
+
 ## Refactoring
 
 | Command      | Plugin      | Description                                    |

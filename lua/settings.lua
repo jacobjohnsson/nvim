@@ -70,3 +70,8 @@ vim.opt.listchars = "trail:~,tab:\\u2022\\u2022"
 
 -- Remove highlighted search results in normal mode by pressing Esc.
 vim.api.nvim_set_keymap('n', '<Esc>', '<Esc>:noh<CR>', {noremap = true, silent = true})
+
+-- map Navbuddy to <leader>n in normal mode
+vim.api.nvim_set_keymap('n', '<leader>n', ':Navbuddy<CR>', {noremap = true, silent = true})
+
+-- Telescope

@@ -148,9 +148,6 @@ require("lazy").setup({
             }
         end,
     },
-    { "nvim-treesitter/playground" },
-    { "nvim-treesitter/nvim-treesitter-textobjects" },
-    { "nvim-treesitter/nvim-treesitter-context" },
     {
         "ThePrimeagen/refactoring.nvim",
         dependencies = {
@@ -211,4 +208,44 @@ require("lazy").setup({
             vim.api.nvim_set_hl(0, "BlinkCmpGhostText", { link = "Grey" })
         end,
     },
+    {
+        "SmiteshP/nvim-navbuddy",
+        dependencies = {
+            "SmiteshP/nvim-navic",
+            "MunifTanjim/nui.nvim"
+        },
+        opts = { lsp = { auto_attach = true } }
+    },
+    {
+        'nvim-telescope/telescope.nvim',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-fzf-native.nvim',
+        },
+        config = function ()
+            require("telescope").setup()
+            local builtin = require('telescope.builtin')
+            vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+            vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+            vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+            vim.keymap.set('n', '<leader>ft', builtin.treesitter, { desc = 'Telescope treesitter' })
+            vim.keymap.set('n', '<leader>fp', builtin.planets, { desc = 'Telescope telescope' })
+            vim.keymap.set('n', '<leader>fm', builtin.man_pages, { desc = 'Telescope man pagez' })
+
+            vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Telescope git branches' })
+            vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'Telescope git commits' })
+            vim.keymap.set('n', '<leader>gh', builtin.git_status, { desc = 'Telescope git hunks' })
+        end,
+    },
+    { "nvim-treesitter/playground" },
+    { "nvim-treesitter/nvim-treesitter-textobjects" },
+    { 
+        "nvim-treesitter/nvim-treesitter-context",
+        config = function ()
+            require("treesitter-context").setup({
+                enable = true,
+            })
+        end,
+    },
 })
+
