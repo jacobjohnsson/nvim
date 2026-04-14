@@ -1,7 +1,7 @@
 -- Bootstrap lazy.nvim (Copied from https://lazy.folke.io/installation)
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+ local lazyrepo = "https://github.com/folke/lazy.nvim.git"
   local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
@@ -39,9 +39,10 @@ require("lazy").setup({
         end,
     },
     {
-        "ggandor/leap.nvim",
+        "https://codeberg.org/andyg/leap.nvim",
         config = function()
-            require'leap'.create_default_mappings()
+            vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
+            vim.keymap.set('n', 'S', '<Plug>(leap-from-window)')
             vim.keymap.set({'n', 'o'}, 'gs', function ()
                 require('leap.remote').action()
             end)
