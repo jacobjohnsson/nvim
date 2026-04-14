@@ -234,16 +234,6 @@ require("lazy").setup({
             vim.keymap.set('n', '<leader>gh', builtin.git_status, { desc = 'Telescope git hunks' })
         end,
     },
-    { "nvim-treesitter/playground" },
-    { "nvim-treesitter/nvim-treesitter-textobjects" },
-    { 
-        "nvim-treesitter/nvim-treesitter-context",
-        config = function ()
-            require("treesitter-context").setup({
-                enable = true,
-            })
-        end,
-    },
     {
         'TheNoeTrevino/haunt.nvim',
         init = function()
