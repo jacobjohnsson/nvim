@@ -71,9 +71,19 @@ require("lazy").setup({
     },
     {
         "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
         config = function()
-            require'nvim-treesitter.configs'.setup {
-                ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "python" },
+            require("nvim-treesitter.configs").setup({
+                ensure_installed = {
+                    "c",
+                    "lua",
+                    "vim",
+                    "vimdoc",
+                    "query",
+                    "markdown",
+                    "markdown_inline",
+                    "python",
+                },
 
                 -- Automatically install missing parsers when entering buffer
                 -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
@@ -84,13 +94,14 @@ require("lazy").setup({
                 },
                 incremental_selection = {
                     enable = false,
-                    -- keymaps = {
-                    --     init_selection = "<Leader>ss",
-                    --     node_incremental = "<Leader>si",
-                    --     scope_incremental = "<Leader>sc",
-                    --     node_decremental = "<Leader>sd",
-                    -- },
                 },
+            })
+        end,
+    },
+    {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        config = function()
+            require("nvim-treesitter.configs").setup({
                 textobjects = {
                     select = {
                         enable = true,
@@ -127,11 +138,16 @@ require("lazy").setup({
                             ["<Leader>mF"] = "@function.outer",
                         },
                     },
-                    playground = {
-                        enable = true,
-                    },
                 },
-            }
+            })
+        end,
+    },
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        config = function ()
+            require("treesitter-context").setup({
+                enable = true,
+            })
         end,
     },
     {
@@ -215,16 +231,6 @@ require("lazy").setup({
             vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Telescope git branches' })
             vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'Telescope git commits' })
             vim.keymap.set('n', '<leader>gh', builtin.git_status, { desc = 'Telescope git hunks' })
-        end,
-    },
-    { "nvim-treesitter/playground" },
-    { "nvim-treesitter/nvim-treesitter-textobjects" },
-    { 
-        "nvim-treesitter/nvim-treesitter-context",
-        config = function ()
-            require("treesitter-context").setup({
-                enable = true,
-            })
         end,
     },
 })
