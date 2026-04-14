@@ -177,8 +177,10 @@ require("lazy").setup({
         "neovim/nvim-lspconfig",
         config = function()
             local capabilities = require('blink.cmp').get_lsp_capabilities()
-            local lsp = require("lspconfig")
-            lsp.clangd.setup{ capabilities = capabilities } -- intall clangd lsp
+            vim.lsp.config("clangd", {
+                capabilities = capabilities,
+            })
+            vim.lsp.enable("clangd")
             vim.api.nvim_set_hl(0, "BlinkCmpGhostText", { link = "Grey" })
         end,
     },
