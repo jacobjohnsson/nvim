@@ -135,14 +135,6 @@ require("lazy").setup({
         end,
     },
     {
-        "ThePrimeagen/refactoring.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-        },
-        lazy = false,
-    },
-    {
         "junegunn/fzf.vim"
     },
     {
