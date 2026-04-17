@@ -170,10 +170,11 @@ require("lazy").setup({
         "neovim/nvim-lspconfig",
         config = function()
             local capabilities = require('blink.cmp').get_lsp_capabilities()
-            vim.lsp.config("clangd", {
-                capabilities = capabilities,
+            vim.lsp.config("*", {})
+            vim.lsp.enable({
+                "clangd",
+                "pyright"
             })
-            vim.lsp.enable("clangd")
             vim.api.nvim_set_hl(0, "BlinkCmpGhostText", { link = "Grey" })
         end,
     },
@@ -232,6 +233,54 @@ require("lazy").setup({
             vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'Telescope git commits' })
             vim.keymap.set('n', '<leader>gh', builtin.git_status, { desc = 'Telescope git hunks' })
         end,
+    },
+    { "nvim-treesitter/playground" },
+    { "nvim-treesitter/nvim-treesitter-textobjects" },
+    { 
+        "nvim-treesitter/nvim-treesitter-context",
+        config = function ()
+            require("treesitter-context").setup({
+                enable = true,
+            })
+        end,
+    },
+    {
+        'TheNoeTrevino/haunt.nvim',
+        init = function()
+            local haunt = require("haunt.api")
+            local map = vim.keymap.set
+            local prefix = "<leader>a"
+
+            -- annotations
+            map("n", prefix .. "a", function()
+                haunt.annotate()
+            end, { desc = "Annotate"})
+
+            map("n", prefix .. "t", function()
+                haunt.toggle_annotation()
+            end, { desc = "Toggle annotation" })
+
+            map("n", prefix .. "T", function()
+                haunt.toggle_all_lines()
+            end, { desc = "Toggle all annotations" })
+
+            map("n", prefix .. "d", function()
+                haunt.delete()
+            end, { desc = "Delete bookmark" })
+
+            map("n", prefix .. "D", function()
+                haunt.clear_all()
+            end, { desc = "Delete all bookmarks" })
+
+            map("n", prefix .. "p", function()
+                haunt.prev()
+            end, { desc = "Previous bookmark" })
+
+            map("n", prefix .. "n", function()
+                haunt.next()
+            end, { desc = "Next bookmark" })
+        end
+
     },
 })
 

@@ -98,3 +98,34 @@ For example:
 > CompileFlags:
 >   Add: ["-I/usr/include/glib-2.0",
 >         "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include"]
+
+| Command   | Mode     | Description                                    |
+| --------- | -------- | ---------------------------------------------- |
+| `gra`     | normal   | Code action                                    |
+| `gri`     | normal   | Implementation                                 |
+| `grn`     | normal   | Rename                                         |
+| `grr`     | nroaml   | References                                     |
+| `grt`     | nroaml   | Type definition                                |
+| `grO`     | normal   | Document symbol                                |
+| `<ctrl>s` | insert   | Signature help                                 |
+| `an`      | visual   | outer incremental selection                    |
+| `in`      | visual   | inner incremental selection                    |
+
+## Haunt
+Hear the ghosts tell you where you were and why you were there. Annotate your
+codebase with ghost text. Seart through the history that you choose.
+
+
+| Command      | Plugin      | Description                        |
+| ------------ | ----------- | ---------------------------------- |
+| `<Leader>ha` | haunt       | Create annotation                  |
+| `<Leader>ht` | haunt       | Toggle annotation                  |
+| `<Leader>hT` | haunt       | Toggle all annotations             |
+| `<Leader>hd` | haunt       | Delete annotation                  |
+| `<Leader>hD` | haunt       | Delete all annotations             |
+| `<Leader>hp` | haunt       | Go to Previous annotation          |
+| `<Leader>hn` | haunt       | Go to Next annotation              |
+
+## Native Vim
+To diff two files in separate files (such as machine features.):
+Load both files in different buffers and run :windo diffthis.
