@@ -125,7 +125,7 @@ require("lazy").setup({
                 require("nvim-treesitter-textobjects.swap").swap_next "@parameter.inner"
             end)
             vim.keymap.set("n", "<leader>wP", function()
-                require("nvim-treesitter-textobjects.swap").swap_previous "@parameter.outer"
+                require("nvim-treesitter-textobjects.swap").swap_previous "@parameter.inner"
             end)
         end,
     },
