@@ -19,24 +19,13 @@
 | `if`         | Treesitter  | @function.inner   |
 | `ac`         | Treesitter  | @class.outer      |
 | `ic`         | Treesitter  | @class.inner      |
-| `lh`         | Treesitter  | @assignment.inner |
-| `rh`         | Treesitter  | @assignment.rhs   |
 
 ## Swap
 
 | Swap         | Plugin      | Description                |
 | ------------ | ----------- | -------------------------- |
 | `<Leader>wp` | Treesitter  | @parameter.inner forwards  |
-| `<Leader>wf` | Treesitter  | @function.outer  forwards  |
 | `<Leader>wP` | Treesitter  | @parameter.inner backwards |
-| `<Leader>wF` | Treesitter  | @function.outer  backwards |
-
-## Move
-
-| Move         | Plugin      | Description               |
-| ------------ | ----------- | ------------------------- |
-| `<Leader>mf` | Treesitter  | @function.outer forwards  |
-| `<Leader>mF` | Treesitter  | @function.outer backwards |
 
 ## Fuzzy Find
 
