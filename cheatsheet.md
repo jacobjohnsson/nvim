@@ -107,13 +107,13 @@ codebase with ghost text. Seart through the history that you choose.
 
 | Command      | Plugin      | Description                        |
 | ------------ | ----------- | ---------------------------------- |
-| `<Leader>ha` | haunt       | Create annotation                  |
-| `<Leader>ht` | haunt       | Toggle annotation                  |
-| `<Leader>hT` | haunt       | Toggle all annotations             |
-| `<Leader>hd` | haunt       | Delete annotation                  |
-| `<Leader>hD` | haunt       | Delete all annotations             |
-| `<Leader>hp` | haunt       | Go to Previous annotation          |
-| `<Leader>hn` | haunt       | Go to Next annotation              |
+| `<Leader>aa` | haunt       | Create annotation                  |
+| `<Leader>at` | haunt       | Toggle annotation                  |
+| `<Leader>aT` | haunt       | Toggle all annotations             |
+| `<Leader>ad` | haunt       | Delete annotation                  |
+| `<Leader>aD` | haunt       | Delete all annotations             |
+| `<Leader>ap` | haunt       | Go to Previous annotation          |
+| `<Leader>an` | haunt       | Go to Next annotation              |
 
 ## Native Vim
 To diff two files in separate files (such as machine features.):
